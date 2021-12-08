@@ -1,7 +1,7 @@
 //______________________BASIC______________________//
 
 //Bai 1:
-// function random(start, end){
+// function randomNum(start, end){
 //     //method math.random() sẽ trả về 1 số ngẫu nhiên
 //     //method math.floor() sẽ làm tròn(xuống) thành số nguyên 
 //         return Math.floor(Math.random() * (end - start + 1) + start);
@@ -12,7 +12,7 @@
 // -----------------------------------------------------------------------
 
 //Bai 2:
-// function random(start, end){
+// function randomNum(start, end){
 //         return Math.floor(Math.random() * (end - start + 1) + start);
 // }
 // var array = [];
@@ -56,10 +56,10 @@
 
 //Bai 1:
 // function getRandomMark(start, end, step){
-//     function random(start, end){
+//     function randomNum(start, end){
 //             return Math.floor(Math.random()*(end - start +1) + start);
 //         }
-//         return start + random(0, Math.floor((end - start) / step)) * step;
+//         return start + randomNum(0, Math.floor((end - start) / step)) * step;
 // }
 // console.log(getRandomMark(6, 10, 0.5));
 // -----------------------------------------------------------------------
@@ -77,12 +77,12 @@
 //                 }
 //         }
 //         function getRandomMark(start, end, step){
-//                 function random(start, end){
+//                 function randomNum(start, end){
 //                         return Math.floor(Math.random() * (end - start + 1) + start);
 //                 }
-//                 return start + random(0, Math.floor((end - start) / step)) * step;
+//                 return start + randomNum(0, Math.floor((end - start) / step)) * step;
 //         }
-//         return student; 
+//         return studentList; 
 // }
 // console.log(generateStudentMark("Nguyen Van A"));
 // -----------------------------------------------------------------------
@@ -100,12 +100,12 @@
 //                 }
 //         }
 //         function getRandomMark(start, end, step){
-//                 function random(start, end){
+//                 function randomNum(start, end){
 //                         return Math.floor(Math.random() * (end - start + 1) + start);
 //                 }
-//                 return start + random(0, Math.floor((end - start) / step)) * step;
+//                 return start + randomNum(0, Math.floor((end - start) / step)) * step;
 //         }
-//         return student; 
+//         return studentList; 
 // }
 // console.log(generateStudentMark("Nguyen Van A"));
 // var markList = [];
@@ -128,29 +128,29 @@
 //                 }
 //         }
 //         function getRandomMark(start, end, step){
-//                 function random(start, end){
+//                 function randomNum(start, end){
 //                         return Math.floor(Math.random() * (end - start + 1) + start);
 //                 }
-//                 return start + random(0, Math.floor((end - start) / step)) * step;
+//                 return start + randomNum(0, Math.floor((end - start) / step)) * step;
 //         }
 //         return studentList; 
 // }
 // console.log(generateStudentMark("Nguyen Van A"));
 // function avgMark1(obj){
-//         let sum = 0;
-//         let data = obj?.Mark;
-//         let size = Object.keys(data).length;
-//         Object.keys(data).map(function(key, index) {
+//         let sumAvg = 0;
+//         let dataMark = obj?.Mark;
+//         let sizeObj = Object.keys(dataMark).length;
+//         Object.keys(dataMark).map(function(key, index) {
 //                 if(key == "literature"){
-//                         sum = data[key] * 2;
+//                         sumAvg = dataMark[key] * 2;
 //                 }else if(key == "maths"){
-//                         sum = sum + data[key] * 2;
+//                         sumAvg = sumAvg + dataMark[key] * 2;
 //                 }else{
-//                 sum += data[key];
+//                 sum += dataMark[key];
 //                 }
-//                 //  console.log(key, index,data[key],size); 
+//                 //  console.log(key, index,dataMark[key],size); 
 //               });
-//               return Math.round((sum / (size + 2))*100) / 100;
+//               return Math.round((sumAvg / (sizeObj + 2))*100) / 100;
 // }
 // console.log(avgMark1(generateStudentMark("Nguyen Van A")));
 // var markList = [];
@@ -163,12 +163,12 @@
 // }
 // console.log(markList);
 // function avgMark2(array) {
-//         const data = {};
+//         const dataAvgMark = {};
 //         array.forEach(element => {
 //                 x = avgMark1(element);
-//                 data[element.Name] = x;
+//                 dataAvgMark[element.Name] = x;
 //         });
-//         return data;
+//         return dataAvgMark;
 // }
 // v = avgMark2(markList);
 // console.log(v);
@@ -177,25 +177,24 @@
 // function searchStudentByAvgMark(obj){
 //         return Object.keys(obj).filter(function(key){
 //               return obj[key] > 8;  
-//         });
-      
+//         });    
 //         }
 // console.log(searchStudentByAvgMark(v));
 //-------------
 //B6:
 // function bonusMoney(obj){
-//         let data = obj?.Mark;
-//         let sum = 0;
-//         Object.keys(data).map(function(key){
-//                 if(data[key] >=8 && data[key] < 9){
-//                         sum +=100000;
-//                 }else if(data[key] >=9 && data[key] < 10){
-//                         sum+=200000;
-//                 }else if(data[key] = 10){
-//                         sum+=500000;
+//         let dataMark = obj?.Mark;
+//         let sumBnMy = 0;
+//         Object.keys(dataMark).map(function(key){
+//                 if(dataMark[key] >=8 && dataMark[key] < 9){
+//                         sumBnMy +=100000;
+//                 }else if(dataMark[key] >=9 && dataMark[key] < 10){
+//                         sumBnMy+=200000;
+//                 }else if(dataMark[key] = 10){
+//                         sumBnMy+=500000;
 //                 }
 //         });
-//         return sum;
+//         return sumBnMy;
 // }
 // q = generateStudentMark("Nguyen Van A");
 // console.log(q);
@@ -213,35 +212,105 @@
 //  return obj2;
 // }
 // console.log(deepClone(nestedObject));
+//======================
+// const _ = require('lodash');  
+// var objOrigin = [{  a: 5 }, {b: 6}]; 
+// // Deep copy
+// function deepClone(obj){
+//   const deepClone = _.cloneDeep(obj);
+//   return deepClone;
+// }
+// deepCopy = deepClone(objOrigin); 
+// console.log('Comparing origianal with deep',objOrigin[0] === deepCopy[0]);  
+// objOrigin[0].a = 10;   
+// console.log("Original value ", objOrigin);  
+// console.log("Deep Copy value ", deepCopy);
 //--------------------
-//B8:
-//kiểm tra 1 giá trị là object
+//B8:deep equal: nếu nội dung 2 object y hệt nhau thì nó sẽ bằng nhau(so sánh nhiều cấp hay toàn bộ props của obj)
+//Kiểm tra 1 giá trị có là object hay k
 // function isObject(obj) {
-//         return obj != null && typeof obj === "object";
-// }     
+//     return obj != null && typeof obj === "object";
+// } 
 // //Hàm so sánh sâu
 // function isDeepEqual(obj1, obj2) {
-//         const keys1 = Object.keys(obj1); 
-//         const keys2 = Object.keys(obj2); 
-//         if (keys1.length !== keys2.length) {
-//                 return false;
+//     const keys1 = Object.keys(obj1); // trả về mảng các thuộc tính của obj1,2
+//     const keys2 = Object.keys(obj2); 
+//     // so sánh số lượng props nếu ko đủ -> return flase
+//     if (keys1.length !== keys2.length) {
+//         return false;
+//     }
+//     //duyệt qua từng phần tử trong mảng keys1
+//     for (const key of keys1) {
+//         const val1 = obj1[key];
+//         const val2 = obj2[key];
+//         // kiểm tra xem hai giá trị có cùng là object hay không
+//         const areObjects = isObject(val1) && isObject(val2);
+//         // nếu cùng là object thì phải gọi đệ quy để so sánh 2 object 
+//         // sd đệ quy để có thể lặp hết vào trong các thuộc tính của object =>
+//         if (areObjects && !isDeepEqual(val1, val2)) {
+//             return false;
 //         }
-//         for (const key of keys1) {
-//                 const val1 = obj1[key];
-//                 const val2 = obj2[key];
-//                 // kiểm tra xem hai giá trị có cùng là object hay không
-//                 const areObjects = isObject(val1) && isObject(val2);
-//                 // nếu cùng là object thì phải gọi đệ quy để so sánh 2 object
-//                 if (areObjects && !isDeepEqual(val1, val2)) {
-//                         return false;
-//                 }     
-//                 // nếu không cùng là object thì so sánh giá trị
-//                 if (!areObjects && val1 !== val2) {
-//                         return false;
-//                 }
-//         }      
-//         return true;
-// }     
+//         // nếu không phải là object(có thể là array...) thì so sánh value
+//         if (!areObjects && val1 !== val2) {
+//             return false;
+//         }
+//     } 
+//     return true;
+// }
+// //simple example
 // let pnt1 = { number: 1, index: 2, title: { type: "vac" } };
-// let pnt2 = { number: 1, index: 2, title: { type: "vac" } };      
-// console.log(isDeepEqual(pnt1, pnt2));
+// let pnt2 = { number: 1, index: 2, title: { type: "vac" } }; 
+// let pnt3 = { number: 1, index: 4, title: { type: "vac" } };      
+// console.log(isDeepEqual(pnt1, pnt2)); // ==>true
+// console.log(isDeepEqual(pnt2, pnt3)); // ==>false
+// //not simple example
+// let a = {
+//     animals:{
+//       fruits:["cat", "dog"]
+//     },
+//     cash:{
+//       "Dolar": {
+//         coin:[40, 50, 20],
+//         paper:[300, 500]
+//       },
+//       "VND": {
+//         type:["I", "VII", "IX"],
+//         hundreds:[300, 500]
+//       },
+//     },
+//     auto:["BMW", "R8"]
+//   };
+//   let b = {
+//     animals:{
+//       fruits:["cat", "dog"]
+//     },
+//     cash:{
+//       "Dolar": {
+//         coin:[40, 50, 20],
+//         paper:[300, 500]
+//       },
+//       "VND": {
+//         type:["I", "VII", "IX"],
+//         hundreds:[300, 500]
+//       },
+//     },
+//     auto:["BMW", "R8"]
+//   };
+//   let c = {
+//     animals:{
+//       fruits:["cat", "dog"]
+//     },
+//     cash:{
+//       "Dolar": {
+//         coin:[40, 50, 20],
+//         paper:[300, 500]
+//       },
+//       "VND": {
+//         type:["I", "VII", "XX"],     //khac nhau (a: type:["I", "VII", "IX"])
+//         hundreds:[300, 500]
+//       },
+//     },
+//     auto:["BMW", "R8"]
+//   };
+//   console.log(isDeepEqual(a, b)); // ==> true
+//   console.log(isDeepEqual(a, c)) // ==> false  
