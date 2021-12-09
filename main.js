@@ -201,30 +201,72 @@
 // console.log(bonusMoney(q));
 //------------
 //B7:
-// const nestedObject = {
-//         country: 'VN',
-//         detail: {
-//           city: 'HCM'
-//         }
-//       };
-// function deepClone(obj1){
-//  const obj2 = JSON.parse(JSON.stringify(obj1));
-//  return obj2;
+// const o = new Object();
+// console.log(o);
+// console.log(o.toString()); // returns [object Object]
+// function getType(obj) {
+//   const str = Object.prototype.toString.call(obj); //xac dinh obj class -> function.prototype.call() lay kieu duoi dang chuoi [o O]
+//   const map = {
+//     '[object Boolean]': 'boolean',
+//     '[object Number]': 'number',
+//     '[object String]': 'string',
+//     '[object Array]': 'array',
+//     '[object Undefined]': 'undefined',
+//     '[object Null]': 'null',
+//     '[object Object]': 'object'
+//   };
+//   //check xem obj thuoc kieu nao
+//   if (obj instanceof Element) {
+//     return 'element';
+//   }
+//   return map[str]; //-> tra ve kieu du lieu mong muon
 // }
-// console.log(deepClone(nestedObject));
-//======================
-// const _ = require('lodash');  
-// var objOrigin = [{  a: 5 }, {b: 6}]; 
-// // Deep copy
-// function deepClone(obj){
-//   const deepClone = _.cloneDeep(obj);
-//   return deepClone;
+
+// //TH la object
+// function copyObject(origin, type, copy = {}) {
+//   for (const [key, value] of Object.entries(origin)) { //Object.entries tra ve mang cac props duoi dang [key,value]
+//     copy[key] = deepCopy(value);
+//   }
+//   return copy;
 // }
-// deepCopy = deepClone(objOrigin); 
-// console.log('Comparing origianal with deep',objOrigin[0] === deepCopy[0]);  
-// objOrigin[0].a = 10;   
-// console.log("Original value ", objOrigin);  
-// console.log("Deep Copy value ", deepCopy);
+
+// function deepCopy(origin) {
+//   const type = getType(origin);
+//   let copy;
+//   if(type == 'object')
+//       return copyObject(origin, type, copy);
+//     else
+//       return origin;
+// }
+// //example
+// let e = {
+//   animals:{
+//     fruits:["cat", "dog"],
+//     vfx: null,
+//     dx: {
+//       fan: "txt",
+//       add: "sh"
+//     },
+//   },
+//   cash:{
+//     "Dolar": {
+//       coin:[40, 50, 20],
+//       paper:[300, 500]
+//     },
+//     "VND": {
+//       type:["I", "VII", "IX"],
+//       hundreds:[300, 500]
+//     },
+//   },
+//   auto:["BMW", "R8"]
+// };
+// g = deepCopy(e);
+// e.auto = ['car'];
+// e.cash.Dolar.coin = [12,13,15,16,17];
+// e.animals.dx.fan = "changed";
+// console.log('origin', e);
+// console.log(g);
+// console.log(isDeepEqual(e, g)); // => false
 //--------------------
 //B8:deep equal: nếu nội dung 2 object y hệt nhau thì nó sẽ bằng nhau(so sánh nhiều cấp hay toàn bộ props của obj)
 //Kiểm tra 1 giá trị có là object hay k
@@ -314,3 +356,11 @@
 //   };
 //   console.log(isDeepEqual(a, b)); // ==> true
 //   console.log(isDeepEqual(a, c)) // ==> false  
+const obj = {
+  firstName: 'Hieu',
+  lastName: {
+    a:'Bui',
+  b:'Van',
+}
+};
+console.log(Object.entries(obj)); // [ [ 'firstName', 'Hieu' ], [ 'lastName', 'Bui' ] 
