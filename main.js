@@ -197,8 +197,8 @@
 // q = generateStudentMark("Nguyen Van A");
 // console.log(q);
 // console.log(bonusMoney(q));
-// ------------
-// B7:
+//------------
+//B7:
 // const o = new Object();
 // console.log(o);
 // console.log(o.toString()); // returns [object Object]
@@ -212,6 +212,7 @@
 //     '[object Undefined]': 'undefined',
 //     '[object Null]': 'null',
 //     '[object Object]': 'object',
+//     '[object Object]': 'object'
 //   };
 //   //check xem obj thuoc kieu nao
 //   if (obj instanceof Element) {
@@ -265,6 +266,56 @@
 // --------------------
 // B8:deep equal: nếu nội dung 2 object y hệt nhau thì nó sẽ bằng nhau(so sánh nhiều cấp hay toàn bộ props của obj)
 // Kiểm tra 1 giá trị có là object hay k
+// }
+
+// //TH la object
+// function copyObject(origin, type, copy = {}) {
+//   for (const [key, value] of Object.entries(origin)) { //Object.entries tra ve mang cac props duoi dang [key,value]
+//     copy[key] = deepCopy(value);
+//   }
+//   return copy;
+// }
+
+// function deepCopy(origin) {
+//   const type = getType(origin);
+//   let copy;
+//   if(type == 'object')
+//       return copyObject(origin, type, copy);
+//     else
+//       return origin;
+// }
+// //example
+// let e = {
+//   animals:{
+//     fruits:["cat", "dog"],
+//     vfx: null,
+//     dx: {
+//       fan: "txt",
+//       add: "sh"
+//     },
+//   },
+//   cash:{
+//     "Dolar": {
+//       coin:[40, 50, 20],
+//       paper:[300, 500]
+//     },
+//     "VND": {
+//       type:["I", "VII", "IX"],
+//       hundreds:[300, 500]
+//     },
+//   },
+//   auto:["BMW", "R8"]
+// };
+// g = deepCopy(e);
+// e.auto = ['car'];
+// e.cash.Dolar.coin = [12,13,15,16,17];
+// e.animals.dx.fan = "changed";
+// console.log('origin', e);
+// console.log(g);
+// console.log(isDeepEqual(e, g)); // => false
+//--------------------
+//B8:deep equal: nếu nội dung 2 object y hệt nhau thì nó sẽ bằng nhau(so sánh nhiều cấp hay toàn bộ props của obj)
+//Kiểm tra 1 giá trị có là object hay k
 // function isObject(obj) {
 //   return obj != null && typeof obj === "object";
 // }
@@ -351,3 +402,7 @@
 // };
 // console.log(isDeepEqual(a, b)); // ==> true
 // console.log(isDeepEqual(a, c)); // ==> false
+//     auto:["BMW", "R8"]
+//   };
+//   console.log(isDeepEqual(a, b)); // ==> true
+//   console.log(isDeepEqual(a, c)) // ==> false
