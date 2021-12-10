@@ -19,7 +19,7 @@ function generateStudentMark(name) {
   return studentList;
 }
 //console.log(generateStudentMark('Nguyen Van A'));
-var markList = [];
+let markList = [];
 while (markList.length < 10) {
   markList.push(generateStudentMark('Nguyen Van A'));
 }

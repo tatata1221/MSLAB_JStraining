@@ -1,12 +1,13 @@
 // 7. Viết hàm deep clone 1 object
 function cloneObject(obj) {
-  var clone = {};
-  for (var i in obj) {
+  let clone = {};
+  //lap vao tung ptu (.) obj origin
+  for (let key in obj) {
     //sd de quy neu nhu ben trong object co chua object con => se lay dc het cac props(deep)
-    if (typeof obj[i] == 'object' && obj[i] != null)
-      clone[i] = cloneObject(obj[i]);
+    if (typeof obj[key] == 'object' && obj[key] != null)
+      clone[key] = cloneObject(obj[key]);
     //kp la obj nua thi gan gia tri vao obj clone
-    else clone[i] = obj[i];
+    else clone[key] = obj[key];
   }
   return clone;
 }
@@ -37,4 +38,4 @@ e.auto = ['car'];
 e.cash.Dolar.coin = [12, 13, 15, 16, 17];
 e.animals.dx.fan = 'changed';
 console.log('copy', p);
-console.log(e);
+console.log('origin', e);
